@@ -17,3 +17,21 @@ This R Markdown document demonstrates my ability to use models for data analysis
 data(diamonds, package = "ggplot2")
 names(diamonds)
 ```
+
+## What affects diamond prices?  
+In this report, we examine what factors predict the price of a diamond.
+
+```{r summary, echo=FALSE}
+summary(diamonds)
+
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(bins = 30, fill = "blue", alpha = 0.7) +
+  ggtitle("Distribution of Diamond Prices") +
+  xlab("Price (USD)")
+```
+
+
+
+
+
+
