@@ -13,7 +13,12 @@ library('tidyverse') ; library('modeldata')
 
 This R Markdown document demonstrates my abilities to use models for data analysis using a data set collected on crickets.
 
+## Load Data Chunk
 
+```{r load data, include = FALSE}
+data(crickets, package = "modeldata")
+names(crickets)
+```
 
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
