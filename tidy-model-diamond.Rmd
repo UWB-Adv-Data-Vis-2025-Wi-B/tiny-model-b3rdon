@@ -1,0 +1,19 @@
+---
+title: "tidy-model-diamond"
+author: "Brandon Emory"
+date: "2025-02-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```  
+
+## Introduction  
+This R Markdown document demonstrates my ability to use models for data analysis using a dataset on diamond prices.
+
+```{r load data, include=FALSE}
+data(diamonds, package = "ggplot2")
+names(diamonds)
+```
