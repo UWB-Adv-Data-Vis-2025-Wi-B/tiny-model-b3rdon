@@ -46,6 +46,22 @@ summary.lm(carat_lm)
 
 Based on a scatter plot of carat and price, as carat increases, the price also increases. The model suggests that for every additional carat, the price rises significantly.
 
+## The effect of cut, color, and clarity  
+
+```{r factors, echo=FALSE}
+ggplot(diamonds, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = 'lm') +
+  ggtitle("Plot of Carat and Price by Cut") +
+  xlab("Carat") +
+  ylab("Price (USD)")
+
+factors_lm <- lm(price ~ carat + cut + color + clarity, diamonds)
+summary.lm(factors_lm)
+```
+
+The model shows that in addition to carat, cut, color, and clarity all influence diamond prices. Higher-quality cuts and clearer diamonds tend to be more expensive.
+
 
 
 
