@@ -25,13 +25,15 @@ names(crickets)
 
 In this report, we examine what factors predict a cricket's chirp rate.
 
+Number of species - 31, temp max 30.4, min 17.2, mean rate of chirping - 72.89
+
 ```{r summary, echo = FALSE}
 summary(crickets)
-``` 
-
-
-
-
+ggplot(crickets, aes(x = rate)) +
+  geom_histogram(bins = 8) + 
+  ggtitle("Distribution of the chirp rate of crickets") +
+  xlab('Chirp rate (per min.)')
+```
 
 
 
