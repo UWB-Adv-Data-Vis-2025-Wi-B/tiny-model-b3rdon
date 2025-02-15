@@ -63,6 +63,21 @@ summary.lm(factors_lm)
 The model shows that in addition to carat, cut, color, and clarity all influence diamond prices. Higher-quality cuts and clearer diamonds tend to be more expensive.
 
 
+## Checking interactions  
+
+```{r interactions, echo=FALSE}
+ggplot(diamonds, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = 'lm') +
+  ggtitle("Plot of Carat and Price with Cut Interaction") +
+  xlab("Carat") +
+  ylab("Price (USD)")
+
+interaction_lm <- lm(price ~ carat * cut, diamonds)
+summary.lm(interaction_lm)
+
+anova(factors_lm, interaction_lm)
+```
 
 
 
