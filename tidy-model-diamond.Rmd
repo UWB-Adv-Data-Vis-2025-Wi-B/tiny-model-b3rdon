@@ -30,6 +30,21 @@ ggplot(diamonds, aes(x = price)) +
   xlab("Price (USD)")
 ```
 
+## Carat affects price  
+
+```{r carat_price, echo=FALSE}
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = 'lm') +
+  ggtitle("Plot of Carat and Price") +
+  xlab("Carat") +
+  ylab("Price (USD)")
+
+carat_lm <- lm(price ~ carat, diamonds)
+summary.lm(carat_lm)
+```
+
+Based on a scatter plot of carat and price, as carat increases, the price also increases. The model suggests that for every additional carat, the price rises significantly.
 
 
 
